@@ -1,0 +1,24 @@
+{
+  "name": "milan-hwj",
+  "version": "0.1.0",
+  "description": "A fast way to copy text to clipboard with javascript,no flash, no dependencies, high performance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milan-hwj/SuperClipBoard.git"
+  },
+  "keywords": [
+    "copy",
+    "easy",
+    "high-performance"
+  ],
+  "author": "milan-hwj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milan-hwj/SuperClipBoard/issues"
+  },
+  "homepage": "https://github.com/milan-hwj/SuperClipBoard"
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>ClipBoard</title>
+        <script type="text/javascript" src="../dist/clipboard.min.js"></script>
+    </head>
+    <body>
+    	<textarea id="area">123</textarea>
+    	<button id="btn">copy</button>
+    	<script>
+    		document.getElementById('btn').addEventListener("click", function(){
+    			ClipBoard.copy(document.getElementById('area').value);
+			});
+    	</script>
+    </body>
+</html>
+

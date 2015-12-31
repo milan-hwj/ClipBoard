@@ -6,13 +6,23 @@
         <script type="text/javascript" src="../dist/clipboard.min.js"></script>
     </head>
     <body>
-    	<textarea id="area">123</textarea>
-    	<button id="btn">copy</button>
-    	<script>
-    		document.getElementById('btn').addEventListener("click", function(){
-    			ClipBoard.copy(document.getElementById('area').value);
-			});
-    	</script>
+        <!-- copy target -->
+        <div>123</div>
+        <!-- copy trigger -->
+        <button id="btn">copy</button>
+        <script>
+            // bind Event
+            document.getElementById('btn').addEventListener("click", function(){
+                    ClipBoard.copy(document.getElementById('area').value, {
+                        success: function(){
+                            console.info('copy success');
+                        },
+                        error: function(){
+                            console.info('copy error');
+                        }
+                    });
+            });
+        </script>
     </body>
 </html>
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>ClipBoard</title>
+        <!-- install -->
+        <script type="text/javascript" src="../dist/clipboard.min.js"></script>
+    </head>
+    <body>
+        <h1>Performance Test</h1>
+        <!-- copy trigger -->
+        <span>content size</span>
+        <button id="btn">Run</button>
+        <span id="result"></span>
+        <script>
+            var createContent = function(size){
+                // size(KB)
+                var contents = [];
+                    content = '123456789';
+                for(var i = size * 100; i>0; i--){
+                    contents.push(content + '\n');
+                }
+                return contents.join('');
+            }
+            // bind event
+            dom.addEventListener('click', function(){
+                ClipBoard.copy(this);
+            });
+        </script>
+    </body>
+</html>
+

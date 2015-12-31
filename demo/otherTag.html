@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>ClipBoard</title>
+        <!-- install -->
+        <script type="text/javascript" src="../dist/clipboard.min.js"></script>
+        <style type="text/css">
+            .copy-content{
+                cursor: pointer;
+                margin: 50px 10px;
+                border: 1px solid #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Use different Tags to copy</h1>
+        <!-- copy trigger -->
+        <div class="copy-content" data-copy-content="div-Hello World">div 'Hello World'</div>
+        <pre class="copy-content" data-copy-content="pre-Hello World">pre 'Hello World'</pre>
+        <h1 class="copy-content" data-copy-content="h1-Hello World">h1 'Hello World'</h1>
+        <p class="copy-content" data-copy-content="p-Hello World">p 'Hello World'</p>
+        <script>
+            // fast bind
+            ClipBoard.bind(document.getElementsByClassName('copy-content'));
+        </script>
+    </body>
+</html>
+

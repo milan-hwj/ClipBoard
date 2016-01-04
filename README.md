@@ -1,9 +1,11 @@
 # SuperClipBoard
-###Copying text to the clipboard with javascript,high performance,no Flash, no dependece.  
+###Copying text to the clipboard with javascript,  
+#####high performance,no Flash, no dependece.  
 ---
 * Just 2KB
 * Easy to get started, only two interface(bind and copy)
-* High performance, copy speed: 3000KB/s
+* <strong>High performance, copy speed: 3000KB/s</strong>
+
 ---
 
 ## Getting started

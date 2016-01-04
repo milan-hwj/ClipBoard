@@ -7,7 +7,7 @@ module.exports = {
     },
     output: {
         path: path.join(process.cwd(), './dist/'),
-        filename : 'clipboard.min.js'//'[name].bundle.js'
+        filename : 'superClipBoard.min.js'
     },
     devtool: '#source-map',
     resolve: {

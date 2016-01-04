@@ -14,7 +14,7 @@
 ```javascript
 npm install superClipBoard --save
 ```
-You can also download the [file](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/dist/superClipBoard.min.js) directly.  
+<strong>You can also download the [file](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/dist/superClipBoard.min.js) directly.  </strong>
 
 ### Step 2:Import js file
 ```javascript
@@ -81,3 +81,6 @@ document.getElementById('btn1').addEventListener("click", function(){
 // fase bind
 superClipBoard.bind(document.getElementById('btn2'), option);
 ```
+
+#License
+[MIT License](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/LICENSE)

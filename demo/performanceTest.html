@@ -9,7 +9,8 @@
     <body>
         <h1>Performance Test</h1>
         <!-- copy trigger -->
-        <span>content size</span>
+        <span>content size(KB)</span>
+        <input type="text" maxlength="4" id="size" value="10"/>
         <button id="btn">Run</button>
         <span id="result"></span>
         <script>
@@ -23,8 +24,15 @@
                 return contents.join('');
             }
             // bind event
-            dom.addEventListener('click', function(){
-                ClipBoard.copy(this);
+            var size = document.getElementById('size');
+            document.getElementById('btn').addEventListener('click', function(){
+                var content = createContent(size.value),
+                    time1 = new Date().getTime();
+                result.innerHTML = 'waiting';
+                setTimeout(function(){
+                    superClipBoard.copy(content);
+                    result.innerHTML = 'Copy success ! time spend: ' + (new Date().getTime() - time1) + ' ms';
+                })
             });
         </script>
     </body>

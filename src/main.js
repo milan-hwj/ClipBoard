@@ -106,4 +106,4 @@ class ClipBoard{
         }
     }
 }
-window.ClipBoard = new ClipBoard();
+window.superClipBoard = new ClipBoard();

@@ -3,7 +3,6 @@
   * @describe A fast way to copy text to clipboard with javascript,no flash, no dependencies, high performance
   */
 class ClipBoard{
-    constructor() {}
     createContentNode(){
         /**
          * @describe Create dom, For storing data to be copied
@@ -29,7 +28,6 @@ class ClipBoard{
          *           }
          * @return
          */
-        opt = opt || {};
         try {
             // create
             let copyDom = this.createContentNode();
@@ -69,9 +67,10 @@ class ClipBoard{
     bind(doms, opt){
        /**
          * @describe Bind copy event, bind
-         * @param    doms: dom or [dom1, dom2, ...]
+         * @param    doms: dom or [dom1, dom2, ...] or selector(str) or jqueryDom
          * @return
          */
+        opt = opt || {};
         let self = this,
             bindHandle = function(dom){
                 let copyHandle = function(){
@@ -79,18 +78,22 @@ class ClipBoard{
                     self.copy(attr.value, opt);
                 };
                 if (dom.addEventListener){
-                    dom.addEventListener('click', function(){
-                        copyHandle.call(this);
+                    dom.addEventListener('click', function(e){
+                        copyHandle.call(this, e);
                     });
                 }
                 else if (dom.attachEvent) {
-                    dom.attachEvent( "onClick", function() {
-                        copyHandle.call(this);
+                    dom.attachEvent( "onClick", function(e) {
+                        copyHandle.call(this, e);
                     });
                 }
             };
         if(!doms){
             return;
+        }
+        // selector
+        if(typeof doms === 'string'){
+            doms = document.querySelectorAll(doms);
         }
         // doms
         if(doms.length > 0){

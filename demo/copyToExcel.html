@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>ClipBoard</title>
+        <!-- install -->
+        <script type="text/javascript" src="../dist/clipboard.min.js"></script>
+    </head>
+    <body>
+        <!-- copy trigger -->
+        <button id="btn1">copy to excel</button>
+        <script>
+            // create excel data
+            function createExcelData(){
+                // mock
+                var content = ['<table>'],
+                    templates = '<tr><td>%s<\/td><td>%s<\/td><\/tr>';
+                content.push(templates.replace('%s', 'name').replace('%s', 'age'));
+                content.push(templates.replace('%s', 'milan').replace('%s', '20'));
+                content.push(templates.replace('%s', 'white gourd angel').replace('%s', '30'));
+                content.push('<\/table>');
+                return content.join('');
+            }
+            // Diy your event, you can use click、keyup、keydown or mousedown etc...
+            document.getElementById('btn1').addEventListener("click", function(){
+                // use "copy"
+                superClipBoard.copy(createExcelData());
+            });
+        </script>
+    </body>
+</html>
+

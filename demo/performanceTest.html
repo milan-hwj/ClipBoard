@@ -8,8 +8,7 @@
     </head>
     <body>
         <h1>Performance Test</h1>
-        <!-- copy trigger -->
-        <span>content size(KB)</span>
+        <span>Content Size(KB)</span>
         <input type="text" maxlength="4" id="size" value="10"/>
         <button id="btn">Run</button>
         <span id="result"></span>
@@ -18,9 +17,11 @@
                 // size(KB)
                 var contents = [];
                     content = '123456789';
+                contents.push('copy success! ' + size*100 + ' rows.' + '\n');
                 for(var i = size * 100; i>0; i--){
                     contents.push(content + '\n');
                 }
+                contents.push('copy success! ' + size*100 + ' rows.' + '\n');
                 return contents.join('');
             }
             // bind event

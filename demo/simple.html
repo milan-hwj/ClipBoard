@@ -8,13 +8,12 @@
     </head>
     <body>
         <!-- copy trigger -->
-        <button id="btn">copy 'Hello World'</button>
+        <button id="btn" data-copy-content="Hello">copy 'Hello'</button>
         <script>
-            // bind Event
-            document.getElementById('btn').addEventListener("click", function(){
-                    superClipBoard.copy('Hello World!');
-            });
+            // fast bind
+            superClipBoard.bind(document.getElementById('btn'));
         </script>
     </body>
 </html>
+
 

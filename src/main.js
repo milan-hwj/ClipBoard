@@ -28,6 +28,7 @@ class ClipBoard{
          *           }
          * @return
          */
+        opt = opt || {};
         try {
             // create
             let copyDom = this.createContentNode();
@@ -45,9 +46,11 @@ class ClipBoard{
             this.destroy(copyDom);
             // callback
             this.copyHandle(opt.success);
+            return true;
         }
         catch (err) {
             this.copyHandle(opt.error);
+            return false;
         }
     }
     copyHandle(callback){
@@ -70,7 +73,6 @@ class ClipBoard{
          * @param    doms: dom or [dom1, dom2, ...] or selector(str) or jqueryDom
          * @return
          */
-        opt = opt || {};
         let self = this,
             bindHandle = function(dom){
                 let copyHandle = function(){

@@ -11,7 +11,7 @@
         <button id="btn1">copy 'Hello'</button>
         <button id="btn2" data-copy-content="World">copy 'World'</button>
         <script>
-            // copy handle
+            // copy feedback
             var option = {
                 success: function(){
                     alert('copy success');
@@ -25,7 +25,7 @@
                     superClipBoard.copy('Hello', option);
             });
             // bind
-            superClipBoard.bind(document.getElementById('btn2'), option)
+            superClipBoard.bind(document.getElementById('btn2'), option);
         </script>
     </body>
 </html>

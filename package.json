@@ -1,5 +1,5 @@
 {
-  "name": "superClipBoard",
+  "name": "fast-clipboard",
   "version": "0.1.0",
   "description": "A fast way to copy text to clipboard with javascript,no flash, no dependencies, high performance",
   "main": "index.js",

@@ -12,7 +12,7 @@
 ---
 ### Step 1:Install
 ```javascript
-npm install superClipBoard --save
+npm install fast-clipboard --save
 ```
 <strong>You can also download the [file](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/dist/superClipBoard.min.js) directly.  </strong>
 
@@ -63,7 +63,7 @@ document.getElementById('btn1').addEventListener("click", function(){
 });
 ```
 ###Copy feedback 
-Both 'copy'' and 'bind' are provide feedback.
+Both 'copy' and 'bind' are provide feedback.
 ```javascript
 // copy feedback
 var option = {

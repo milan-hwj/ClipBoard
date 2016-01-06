@@ -20,8 +20,6 @@
   "bugs": {
     "url": "https://github.com/milan-hwj/SuperClipBoard/issues"
   },
-  "dependencies": {
-    "select": "*"
-  },
+  "dependencies": {},
   "homepage": "https://github.com/milan-hwj/SuperClipBoard"
 }

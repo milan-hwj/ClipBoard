@@ -57,7 +57,7 @@ superClipBoard.bind([
 ### DIY copy event
 ```javascript
 // You can use any event such as click, mouseover, mouseover etc.. to bind copy behavior
-// 
+// IE browser using 'attachEvent' binding event
 document.getElementById('btn1').addEventListener("click", function(){
         // use 'copy(content)' to set the copy content
         superClipBoard.copy('Hello');
@@ -75,7 +75,7 @@ var option = {
         alert('copy error');
     }
 }
-// bind Event(IE browser using 'attachEvent' binding event)
+// bind Event
 document.getElementById('btn1').addEventListener("click", function(){
         superClipBoard.copy('Hello', option);
 });

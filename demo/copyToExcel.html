@@ -22,10 +22,19 @@
                 return content.join('');
             }
             // Diy your event, you can use click、keyup、keydown or mousedown etc...
-            document.getElementById('btn1').addEventListener("click", function(){
-                // use "copy"
-                superClipBoard.copy(createExcelData());
-            });
+            var dom = document.getElementById('btn1');
+            if(dom.addEventListener){
+                dom.addEventListener("click", function(){
+                    // use "copy"
+                    superClipBoard.copy(createExcelData());
+                });
+            }
+            else if(dom.attachEvent){
+                dom.attachEvent( "onClick", function(e) {
+                    // use "copy"
+                    superClipBoard.copy(createExcelData());
+                });
+            }
         </script>
     </body>
 </html>

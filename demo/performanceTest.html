@@ -25,16 +25,21 @@
                 return contents.join('');
             }
             // bind event
-            var size = document.getElementById('size');
-            document.getElementById('btn').addEventListener('click', function(){
-                var content = createContent(size.value),
-                    time1 = new Date().getTime();
-                result.innerHTML = 'waiting';
-                setTimeout(function(){
+            var size = document.getElementById('size'),
+                dom = document.getElementById('btn'),
+                copy = function(){
+                    var content = createContent(size.value),
+                        time1 = new Date().getTime();
+                    result.innerHTML = 'waiting';
                     superClipBoard.copy(content);
                     result.innerHTML = 'Copy success ! time spend: ' + (new Date().getTime() - time1) + ' ms';
-                })
-            });
+                };
+            if(dom.addEventListener){
+                dom.addEventListener("click", copy);
+            }
+            else if(dom.attachEvent){
+                dom.attachEvent( "onClick", copy);
+            }
         </script>
     </body>
 </html>

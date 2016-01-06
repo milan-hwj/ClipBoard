@@ -21,9 +21,17 @@
                 }
             }
             // bind Event
-            document.getElementById('btn1').addEventListener("click", function(){
+            var dom = document.getElementById('btn1');
+            if(dom.addEventListener){
+                dom.addEventListener("click", function(){
                     superClipBoard.copy('Hello', option);
-            });
+                });
+            }
+            else if(dom.attachEvent){
+                dom.attachEvent( "onClick", function(e) {
+                    superClipBoard.copy('Hello', option);
+                });
+            }
             // bind
             superClipBoard.bind(document.getElementById('btn2'), option);
         </script>

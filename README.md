@@ -1,6 +1,6 @@
 # SuperClipBoard
-###Copying text to the clipboard with javascript,  
-#####high performance,no Flash, no dependece.  
+### Copying text to the clipboard with javascript,  
+##### high performance,no Flash, no dependece.  
 ---
 * Just 2KB
 * Easy to get started, only two interface(bind and copy)
@@ -18,7 +18,7 @@ npm install fast-clipboard --save
 
 ### Step 2:Import js file
 ```javascript
-<script type="text/javascript" src="superClipBoard.min.js"></script>
+<script type="text/javascript" src="../dist/superClipBoard.min.js"></script>
 ```
 
 ### Step 3: Bind
@@ -30,9 +30,9 @@ npm install fast-clipboard --save
 </script>
 ```
 
-##Usage
+## Usage
 ---
-###Bind copy event
+### Bind copy event
 Set a 'data-copy-content' attribute in your trigger element
 ```javascript
 <div class="example1" data-copy-content="Hello World">copy</div>
@@ -54,15 +54,16 @@ superClipBoard.bind([
     document.getElementById('example4_2')
 ]);
 ```
-###DIY copy event
+### DIY copy event
 ```javascript
 // You can use any event such as click, mouseover, mouseover etc.. to bind copy behavior
+// 
 document.getElementById('btn1').addEventListener("click", function(){
         // use 'copy(content)' to set the copy content
         superClipBoard.copy('Hello');
 });
 ```
-###Copy feedback 
+### Copy feedback 
 Both 'copy' and 'bind' are provide feedback.
 ```javascript
 // copy feedback
@@ -74,13 +75,13 @@ var option = {
         alert('copy error');
     }
 }
-// bind Event
+// bind Event(IE browser using 'attachEvent' binding event)
 document.getElementById('btn1').addEventListener("click", function(){
         superClipBoard.copy('Hello', option);
 });
-// fase bind
+// fast bind
 superClipBoard.bind(document.getElementById('btn2'), option);
 ```
 
-#License
+# License
 [MIT License](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/LICENSE)

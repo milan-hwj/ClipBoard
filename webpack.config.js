@@ -3,11 +3,11 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        main : './src/main.js'
+        superClipBoard : './src/main.js'
     },
     output: {
         path: path.join(process.cwd(), './dist/'),
-        filename : 'superClipBoard.min.js'
+        filename : '[name].min.js',
     },
     devtool: '#source-map',
     resolve: {

@@ -108,4 +108,7 @@ class ClipBoard {
     }
   }
 }
-window.superClipBoard = new ClipBoard();
+const superClipBoard = new ClipBoard();
+window.superClipBoard = superClipBoard;
+
+export default superClipBoard;

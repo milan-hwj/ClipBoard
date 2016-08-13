@@ -11,6 +11,7 @@ class ClipBoard {
      * @return   dom
      */
     const copyDom = document.createElement('pre');
+    copyDom.setAttribute('class', 'superClipBoardContentNode');
     copyDom.style.position = 'absolute';
     copyDom.style.left = '-9999px';
     copyDom.style.top = '-9999px';

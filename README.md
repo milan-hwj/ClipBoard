@@ -83,5 +83,16 @@ document.getElementById('btn1').addEventListener("click", function(){
 superClipBoard.bind(document.getElementById('btn2'), option);
 ```
 
+### Tips and tricks
+In cases where your content is styled with CSS the style will be copied to your clipboard. This can be an issue when you paste in places like Word documents or Google spreadsheets. To avoid this add the following style to your stylesheet.
+```
+pre.superClipBoardContentNode {
+    all: initial;
+    * {
+    all: unset;
+    }
+}
+```
+
 # License
 [MIT License](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/LICENSE)

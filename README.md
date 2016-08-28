@@ -1,98 +1,67 @@
-# SuperClipBoard
-### Copying text to the clipboard with javascript,  
-##### high performance,no Flash, no dependece.  
----
-* Just 2KB
-* Easy to get started, only two interface(bind and copy)
-* <strong>High performance, copy speed: 3000KB/s</strong>
-
----
+# Judgment
 
 ## Getting started
 ---
 ### Step 1:Install
 ```javascript
-npm install superClipBoard --save
-```
-<strong>You can also download the [file](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/dist/superClipBoard.min.js) directly.  </strong>
-
-### Step 2:Import js file
-```javascript
-<script type="text/javascript" src="../dist/superClipBoard.min.js"></script>
+npm install judyment --save
 ```
 
-### Step 3: Bind
+### Step 2:Import
 ```javascript
-<button id="btn" data-copy-content="Hello">copy 'Hello'</button>
-<script>
-    // fast bind
-    superClipBoard.bind(document.getElementById('btn'));
-</script>
+import Judgment from 'judgment';
 ```
 
-## Usage
----
-### Bind copy event
-Set a 'data-copy-content' attribute in your trigger element
+### Usage
+#### simple demo:
 ```javascript
-<div class="example1" data-copy-content="Hello World">copy</div>
-```
-then you can using a variety of selector to bind copy event.
-```javascript
-// example1: document selector
-superClipBoard.bind(document.getElementsByClassName('example1'));
-
-// example2: selector like jquery
-superClipBoard.bind('.example2');
-
-// example3: jquery nodes (import jquery)
-superClipBoard.bind($('.example3'));
-
-// example4: simple dom array
-superClipBoard.bind([
-    document.getElementById('example4_1'),
-    document.getElementById('example4_2')
-]);
-```
-### DIY copy event
-```javascript
-// You can use any event such as click, mouseover, mouseover etc.. to bind copy behavior
-// IE browser using 'attachEvent' binding event
-document.getElementById('btn1').addEventListener("click", function(){
-        // use 'copy(content)' to set the copy content
-        superClipBoard.copy('Hello');
-});
-```
-### Copy feedback 
-Both 'copy' and 'bind' are provide feedback.
-```javascript
-// copy feedback
-var option = {
-    success: function(){
-        alert('copy success');
-    },
-    error: function(){
-        alert('copy error');
+let s = 10; 
+let judg = Judgment({
+    conditions: [
+        () => { if(s > 1) {return true;} return false;},
+        () => { if(s > 3) {return true;} return false;},
+        () => { if(s > 8) {return true;} return false;},
+        () => { if(s > 10) {return true;} return false;}
+    ],
+    relations: {
+        // '*' means ignore this condision
+        // '111*' is equals '111'
+        'result1': ['1111', '111*'],
+        'result2': ['1000'],
+        // '****' or '' means ignore all condision
+        'result3': ['****']
     }
-}
-// bind Event
-document.getElementById('btn1').addEventListener("click", function(){
-        superClipBoard.copy('Hello', option);
+    // If conditions can match with several results, then return the first result, deault: false
+    // matchOnce: false
 });
-// fast bind
-superClipBoard.bind(document.getElementById('btn2'), option);
+
+console.info(judg.run()); // [result1, result3]
+
+s = 2;
+console.info(judg.run()); // [result2, result3]
+```
+#### custom conditions:
+```javascript
+let s = 10; 
+let judg = Judgment({
+    conditions: [
+        () => { if(s > 1) {return 'a';} return 'b';},
+        () => { if(s > 3) {return 'c';} return 'd';}
+    ],
+    relations: {
+        'result1': ['ac'],
+        'result2': ['ad']
+    }
+});
+
+console.info(judg.run()); // [result1]
+
+s = 2;
+console.info(judg.run()); // [result2]
 ```
 
-### Tips and tricks
-In cases where your content is styled with CSS the style will be copied to your clipboard. This can be an issue when you paste in places like Word documents or Google spreadsheets. To avoid this add the following style to your stylesheet.
-```
-pre.superClipBoardContentNode {
-    all: initial;
-    * {
-    all: unset;
-    }
-}
-```
 
 # License
-[MIT License](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/LICENSE)
+MIT License
+
+

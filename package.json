@@ -1,7 +1,7 @@
 {
-  "name": "superClipBoard",
-  "version": "0.1.6",
-  "description": "A fast way to copy text to clipboard with javascript,no flash, no dependencies, high performance",
+  "name": "judgment",
+  "version": "0.1.10",
+  "description": "judgment",
   "main": "./dist/main.js",
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
@@ -9,17 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/milan-hwj/SuperClipBoard.git"
+    "url": ""
   },
   "keywords": [
-    "copy",
-    "easy",
-    "high-performance"
+    "judgment"
   ],
   "author": "milan-hwj",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/milan-hwj/SuperClipBoard/issues"
+    "url": ""
   },
   "dependencies": {
     "babel": "~6.1.18",
@@ -34,7 +32,7 @@
     "babel-runtime": "^6.2.0",
     "extract-text-webpack-plugin": "^0.9.1"
   },
-  "homepage": "https://github.com/milan-hwj/SuperClipBoard",
+  "homepage": "",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-preset-es2015": "^6.9.0"

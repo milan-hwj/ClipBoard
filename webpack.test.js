@@ -4,11 +4,11 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        main : './src/main.js'
+        test : './demo/test.js'
     },
     output: {
-        path: path.join(process.cwd(), './dist/'),
-        filename : '[name].js',
+        path: path.join(process.cwd(), './demo/'),
+        filename : '[name].bundle.js',
     },
     devtool: '#source-map',
     resolve: {
@@ -25,12 +25,6 @@ module.exports = {
                 comments: false
             }
         })
-        // new webpack.optimize.UglifyJsPlugin({
-        //     minimize: false,
-        //     compress: {
-        //         warnings: false
-        //     }
-        // })
     ],
     module: {
         loaders: [

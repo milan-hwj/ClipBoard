@@ -1,7 +1,7 @@
 {
-  "name": "judgment",
-  "version": "0.1.10",
-  "description": "judgment",
+  "name": "superClipBoard",
+  "version": "0.1.6",
+  "description": "A fast way to copy text to clipboard with javascript,no flash, no dependencies, high performance",
   "main": "./dist/main.js",
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
@@ -9,15 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/milan-hwj/SuperClipBoard.git"
   },
   "keywords": [
-    "judgment"
+    "copy",
+    "easy",
+    "high-performance"
   ],
-  "author": "milan-hwj",
+  "author": {
+    "name": "milan-hwj"
+  },
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/milan-hwj/SuperClipBoard/issues"
   },
   "dependencies": {
     "babel": "~6.1.18",
@@ -32,9 +36,15 @@
     "babel-runtime": "^6.2.0",
     "extract-text-webpack-plugin": "^0.9.1"
   },
-  "homepage": "",
+  "homepage": "https://github.com/milan-hwj/SuperClipBoard",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-preset-es2015": "^6.9.0"
-  }
+  },
+  "readme": "# SuperClipBoard\n### Copying text to the clipboard with javascript,  \n##### high performance,no Flash, no dependece.  \n---\n* Just 2KB\n* Easy to get started, only two interface(bind and copy)\n* <strong>High performance, copy speed: 3000KB/s</strong>\n\n---\n\n## Getting started\n---\n### Step 1:Install\n```javascript\nnpm install superClipBoard --save\n```\n<strong>You can also download the [file](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/dist/superClipBoard.min.js) directly.  </strong>\n\n### Step 2:Import js file\n```javascript\n<script type=\"text/javascript\" src=\"../dist/superClipBoard.min.js\"></script>\n```\n\n### Step 3: Bind\n```javascript\n<button id=\"btn\" data-copy-content=\"Hello\">copy 'Hello'</button>\n<script>\n    // fast bind\n    superClipBoard.bind(document.getElementById('btn'));\n</script>\n```\n\n## Usage\n---\n### Bind copy event\nSet a 'data-copy-content' attribute in your trigger element\n```javascript\n<div class=\"example1\" data-copy-content=\"Hello World\">copy</div>\n```\nthen you can using a variety of selector to bind copy event.\n```javascript\n// example1: document selector\nsuperClipBoard.bind(document.getElementsByClassName('example1'));\n\n// example2: selector like jquery\nsuperClipBoard.bind('.example2');\n\n// example3: jquery nodes (import jquery)\nsuperClipBoard.bind($('.example3'));\n\n// example4: simple dom array\nsuperClipBoard.bind([\n    document.getElementById('example4_1'),\n    document.getElementById('example4_2')\n]);\n```\n### DIY copy event\n```javascript\n// You can use any event such as click, mouseover, mouseover etc.. to bind copy behavior\n// IE browser using 'attachEvent' binding event\ndocument.getElementById('btn1').addEventListener(\"click\", function(){\n        // use 'copy(content)' to set the copy content\n        superClipBoard.copy('Hello');\n});\n```\n### Copy feedback \nBoth 'copy' and 'bind' are provide feedback.\n```javascript\n// copy feedback\nvar option = {\n    success: function(){\n        alert('copy success');\n    },\n    error: function(){\n        alert('copy error');\n    }\n}\n// bind Event\ndocument.getElementById('btn1').addEventListener(\"click\", function(){\n        superClipBoard.copy('Hello', option);\n});\n// fast bind\nsuperClipBoard.bind(document.getElementById('btn2'), option);\n```\n\n# License\n[MIT License](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/LICENSE)\n",
+  "readmeFilename": "README.md",
+  "gitHead": "1afcb3b866336c8fbea2793ed385d2f69c709b0a",
+  "_id": "superClipBoard@0.1.6",
+  "_shasum": "3fe3eacc1df15a958aadbc18099b46b1b000d20c",
+  "_from": "superClipBoard@latest"
 }

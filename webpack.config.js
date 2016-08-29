@@ -1,14 +1,13 @@
-var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        main : './src/main.js'
+        superClipBoard : './src/main.js'
     },
     output: {
         path: path.join(process.cwd(), './dist/'),
-        filename : '[name].js',
+        filename : '[name].min.js',
     },
     devtool: '#source-map',
     resolve: {
@@ -16,15 +15,7 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     plugins: [
-        new ExtractTextPlugin("[name].css"),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            output: {
-                comments: false
-            }
-        })
+        new ExtractTextPlugin("[name].css")
         // new webpack.optimize.UglifyJsPlugin({
         //     minimize: false,
         //     compress: {

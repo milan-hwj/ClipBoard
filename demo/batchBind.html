@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>ClipBoard</title>
+        <!-- install -->
+        <script type="text/javascript" src="../dist/superClipBoard.min.js"></script>
+        <!-- import jquery for example3 -->
+        <script type="text/javascript" src="jquery/jquery.min.js"></script>
+        <style type="text/css">
+            div, pre{
+                cursor: pointer;
+                margin: 50px 10px;
+                padding: 5px;
+                background-color: silver;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Batch bind, Click the silver area to complete copy</h1>
+        <br>
+        <!-- batch example1 -->
+        <h2>batch example1</h2>
+        <div class="example1" data-copy-content="div-Hello World">div 'Hello World'</div>
+        <pre class="example1" data-copy-content="pre-Hello World">pre 'Hello World'</pre>
+
+        <!-- batch example2 -->
+        <h2>batch example2</h2>
+        <div class="example2" data-copy-content="div-Hello World">div 'Hello World'</div>
+        <pre class="example2" data-copy-content="pre-Hello World">pre 'Hello World'</pre>
+
+        <!-- batch example3 -->
+        <h2>batch example3</h2>
+        <div class="example3" data-copy-content="div-Hello World">div 'Hello World'</div>
+        <pre class="example3" data-copy-content="pre-Hello World">pre 'Hello World'</pre>
+
+        <!-- batch example4 -->
+        <h2>batch example4</h2>
+        <div id="example4_1" data-copy-content="div-Hello World">div 'Hello World'</div>
+        <pre id="example4_2" data-copy-content="pre-Hello World">pre 'Hello World'</pre>
+
+        <script>
+            // example1
+            superClipBoard.bind(document.getElementsByClassName('example1'));
+            // example2
+            superClipBoard.bind('.example2');
+            // example3(import jquery)
+            superClipBoard.bind($('.example3'));
+            // example4
+            superClipBoard.bind([
+                document.getElementById('example4_1'),
+                document.getElementById('example4_2')
+            ]);
+        </script>
+    </body>
+</html>
+

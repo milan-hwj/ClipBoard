@@ -31,8 +31,8 @@
                     var content = createContent(size.value),
                         time1 = new Date().getTime();
                     result.innerHTML = 'waiting';
-                    superClipBoard.copy(content);
-                    result.innerHTML = 'Copy success ! time spend: ' + (new Date().getTime() - time1) + ' ms';
+                    var isSuccess = superClipBoard.copy(content);
+                    result.innerHTML = 'Copy ' + (isSuccess ? 'success' : 'error') + ' ! time spend: ' + (new Date().getTime() - time1) + ' ms';
                 };
             if(dom.addEventListener){
                 dom.addEventListener("click", copy);

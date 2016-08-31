@@ -60,6 +60,7 @@ superClipBoard.bind([
 // IE browser using 'attachEvent' binding event
 document.getElementById('btn1').addEventListener("click", function(){
         // use 'copy(content)' to set the copy content
+        // The copy function return result: boolean(ture or false)
         superClipBoard.copy('Hello');
 });
 ```
@@ -71,6 +72,8 @@ var option = {
     success: function(){
         alert('copy success');
     },
+    // If clipboad is not big enough to storage text, it will run this function
+    // The max size of clipboad depend on your runing envrionment
     error: function(){
         alert('copy error');
     }

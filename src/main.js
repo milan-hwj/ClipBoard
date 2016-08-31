@@ -45,24 +45,9 @@ class ClipBoard {
 
       // destroy
       this.destroy(copyDom);
-      if (!isSuccess) {
-        const isMac = /mac/i.test(window.navigator.userAgent);
-        const copyShortcut = isMac ? 'Cmd + C' : 'Ctrl + C';
-        let tip = `Data size is too large to copy, press ${copyShortcut} to copy please`;
-        if (opt && typeof opt.getCopyText === 'function') {
-          tip = opt.getCopyText(copyShortcut);
-        }
-        if (opt && typeof opt.renderOverSizeDialog === 'function') {
-          // custom tip dialog
-          opt.renderOverSizeDialog(content, tip);
-        } else {
-          // default tip dialog
-          window.prompt(tip, content);
-        }
-      }
       // callback
-      this.copyHandle(opt.success);
-      return true;
+      this.copyHandle(isSuccess ? opt.success : opt.error);
+      return isSuccess;
     } catch (err) {
       this.copyHandle(opt.error);
       return false;

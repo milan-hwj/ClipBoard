@@ -12,7 +12,7 @@
 ---
 ### Step 1:Install
 ```javascript
-npm install fast-clipboard --save
+npm install superClipBoard --save
 ```
 <strong>You can also download the [file](https://raw.githubusercontent.com/milan-hwj/SuperClipBoard/master/dist/superClipBoard.min.js) directly.  </strong>
 

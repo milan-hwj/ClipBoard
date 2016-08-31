@@ -24,6 +24,9 @@
     "url": "https://github.com/milan-hwj/SuperClipBoard/issues"
   },
   "dependencies": {
+  },
+  "homepage": "https://github.com/milan-hwj/SuperClipBoard",
+  "devDependencies": {
     "babel": "~6.1.18",
     "babel-core": "~6.1.19",
     "babel-loader": "~6.1.0",
@@ -34,10 +37,7 @@
     "babel-preset-react": "~6.1.18",
     "babel-preset-stage-0": "^6.1.18",
     "babel-runtime": "^6.2.0",
-    "extract-text-webpack-plugin": "^0.9.1"
-  },
-  "homepage": "https://github.com/milan-hwj/SuperClipBoard",
-  "devDependencies": {
+    "extract-text-webpack-plugin": "^0.9.1",
     "babel-cli": "^6.10.1",
     "babel-preset-es2015": "^6.9.0"
   },
